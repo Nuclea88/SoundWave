@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router";
 import NavBar from "../NavBar";
+import Footer from "../Footer";
 
 
 const Layout = () => {
