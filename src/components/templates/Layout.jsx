@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from "react-router";
+import NavBar from "../NavBar";
 
 
 const Layout = () => {
@@ -6,7 +7,7 @@ const Layout = () => {
     const isHomePage = location.pathname === '/';
     return (
         <>
-        <nav><Navbar /></nav>
+        <nav><NavBar /></nav>
         <main><Outlet /></main>
         {!isHomePage && (<footer><Footer /></footer>)}
         </>

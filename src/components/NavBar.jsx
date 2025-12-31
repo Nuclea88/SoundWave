@@ -8,8 +8,8 @@ const NavBar = () => {
                 <Link to = "/"> Soundwave</Link>
             </div>
             <div>
-                <Link to = "/discover"> Discover</Link>
-                <Link to = "/login"> Join</Link>
+                <Link to = "/Discover"> Discover</Link>
+                <Link to = "/Login"> Join</Link>
             </div>
         </nav>
     );
