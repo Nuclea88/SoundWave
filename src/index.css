@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-general-background: #2F303A;     
+  --color-footer-icons: #202027;
+  --color-border-input: #2E3852;  
+  --color-border-input-focus: #596da0;  
+  --color-button-bck: #1762A7;     
+  --color-button-hover: #2180d8; 
+  --color-button-focus: #2796ff;
+  --color-acent-text: #2796ff
+  --color-circle1: #bc3a801a;
+  --color-circle2: #3457b21a;
+
+  --font-poppins: "Poppins", sans-serif;
+ 
+}
+
+@layer base {
+  body {
+    @apply bg-general-background text-white font-poppins;
+    font-size: 1.2rem; 
+  }
+}
