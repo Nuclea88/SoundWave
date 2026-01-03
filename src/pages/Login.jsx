@@ -1,6 +1,15 @@
+import Phorm from "../components/organism/Phorm";
+
 const Login = () => {
     return (
-        <h1>Login</h1>
+      <section>
+        <div>
+            <h1>Join the <span>fun.</span></h1>
+        </div>
+        <div>
+                <Phorm />
+        </div>
+        </section>
     )
 }
 export default Login;
