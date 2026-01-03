@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import PhormRules from '../atoms/PhormRules';
-import InputField from '../atoms/InputField';
+import PhormRules from '../atoms/PhormRules.jsx';
+import InputField from '../atoms/InputField.jsx';
 
 const Phorm = () => {
     const formFields = [
@@ -8,18 +8,20 @@ const Phorm = () => {
   { label: "Email", name: "email", type: "email" },
   { label: "Password", name: "password", type: "password" },
 ];
-    const [phormData, setPhormData] = useState({
-        name:'',
-        email:'',
-        password:''
-    });
+    const initialState = formFields.reduce((acc, field) => {
+        acc[field.name] = "";
+        return acc;
+        }, {});
+    const [phormData, setPhormData] = useState({initialState});
     const [errors, setErrors] = useState({});
+    const [formMessage, setFormMessage] = useState('');
     const handleChange = (event) => {
         const {name, value} = event.target;
         setPhormData({
             ...phormData,
             [name]: value
         });
+        setFormMessage('');
     };
     const handleBlur = (e) => {
         const { name, value } = e.target;
@@ -36,7 +38,16 @@ const Phorm = () => {
     };   
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Datos a validar:", phormData);
+        formFields.forEach(field => validateField(
+            field.name, phormData[field.name]));
+        const hasErrors = Object.values(errors).some(msg => msg !== "");
+        if (!hasErrors) {
+            setFormMessage('');
+            console.log("Datos a validar:", phormData);
+        } 
+        if (hasErrors) {
+            setFormMessage('Error. Please review the fields');
+        }
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -51,7 +62,9 @@ const Phorm = () => {
                     onBlur={handleBlur}
                     error={errors[field.name]}
                 />
-            ))}
+            )) }
+            {formMessage && (
+                <p> {formMessage}</p>)}
             <button type="submit">Join Now</button>
         </form>
     )
