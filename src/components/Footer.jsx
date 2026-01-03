@@ -1,13 +1,22 @@
+import React from "react";
 const Footer = () => {
     return(
-        <footer>
-            <nav>
-                <p>About Us</p>
-                <p>Contact</p>
-                <img src="/images/twitter.svg" alt = "twitter logo" />
-                <p>Twitter</p>
-                <img src="/images/facebook.svg" alt = "facebook logo" />
-                <p>Facebook</p>
+        <footer className = "bg-footer-icons font-bold py-8 px-6 md:px-60">
+            <nav className=" w-full flex flex-row justify-between items-center gap-10 md:gap-0" >
+                <div className = "flex gap-10">
+                    <p>About Us</p>
+                    <p>Contact</p>
+                </div>
+                <div className = "flex gap-6">
+                    <div className= "flex items-center gap-2">
+                        <img src="/images/twitter.svg" alt = "twitter logo" />
+                        <p>Twitter</p>
+                    </div>
+                    <div className= "flex items-center gap-2">
+                        <img src="/images/facebook.svg" alt = "facebook logo" />
+                        <p>Facebook</p>
+                    </div>
+                </div>
             </nav>
         </footer>
     );
