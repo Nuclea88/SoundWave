@@ -1,7 +1,13 @@
 import {useState} from 'react';
 import PhormRules from '../atoms/PhormRules';
+import InputField from '../atoms/InputField';
 
 const Phorm = () => {
+    const formFields = [
+  { label: "Name", name: "name", type: "text" },
+  { label: "Email", name: "email", type: "email" },
+  { label: "Password", name: "password", type: "password" },
+];
     const [phormData, setPhormData] = useState({
         name:'',
         email:'',
@@ -34,29 +40,19 @@ const Phorm = () => {
     }
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor='name'>Name:</label>
-                <input type='text' name='name' value={phormData.name} 
-                    onChange={handleChange} onBlur={handleBlur} required></input>
-                     {errors.name && <span>{errors.name}</span>}
-            </div>
-
-            <div>
-                <label htmlFor='email'>Email:</label>
-                <input type='email' name='email' value={phormData.email} 
-                    onChange={handleChange} onBlur={handleBlur}required></input>
-                    {errors.email && <span>{errors.email}</span>}
-            </div>
-
-            <div>
-                <label htmlFor='password'>Password:</label>
-                <input type='password' name='password' value={phormData.password} 
-                    onChange={handleChange} onBlur={handleBlur}required></input>
-                    {errors.password && <span>{errors.password}</span>}
-            </div>
-            <div>
-                <button type='submit'>Join Now</button>
-            </div>
+            {formFields.map((field) => (
+                <InputField
+                    key={field.name}
+                    label={field.label}
+                    name={field.name}
+                    type={field.type}
+                    value={phormData[field.name]}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors[field.name]}
+                />
+            ))}
+            <button type="submit">Join Now</button>
         </form>
     )
 };
