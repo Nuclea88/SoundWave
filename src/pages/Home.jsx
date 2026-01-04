@@ -12,7 +12,7 @@ const Home =() => {
                 <img src="/images/landing-page-girl.png" alt="girl listen music" className="w-130 hidden md:block"/>
             </div>
             <div className="max-w-sm">
-                <h1 className="text-5xl font-bold">Feel the music</h1>
+                <h1 className="text-5xl font-medium">Feel the music</h1>
                 <p className="py-8">Steam over 20 thousand songs with one click</p>
                 <Link to="/join" className="bg-button-bck py-3 px-5 rounded-md">Join Now</Link>
             </div>
