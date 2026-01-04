@@ -50,7 +50,7 @@ const Phorm = () => {
         }
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="px-18 py-5">
             {formFields.map((field) => (
                 <InputField
                     key={field.name}
@@ -64,8 +64,8 @@ const Phorm = () => {
                 />
             )) }
             {formMessage && (
-                <p> {formMessage}</p>)}
-            <button type="submit">Join Now</button>
+                <p className="text-acent-text"> {formMessage}</p>)}
+            <button type="submit" className="bg-button-bck py-3 rounded-md w-full mt-6 mb-6">Join Now</button>
         </form>
     )
 };
