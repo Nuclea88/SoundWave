@@ -1,16 +1,50 @@
-# React + Vite
+# 🎵 Soundwave
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Soundwave es una plataforma web moderna para amantes de la música, desarrollada con **React** y **Tailwind CSS v4**. El proyecto destaca por una arquitectura escalable basada en **Atomic Design** y un sistema de validación de formularios robusto. 🎧
 
-Currently, two official plugins are available:
+## 🚀 Guía de Inicio Rápido
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para replicar este entorno de desarrollo desde cero, se deben seguir ños siguientes pasos:
 
-## React Compiler
+1.  **Inicialización del proyecto:**
+    ```bash
+    npm create vite@latest
+    (escoger react y javascript)
+    ```
+2.  **Instalación de dependencias clave:**
+    * **Navegación:** `npm install react-router-dom` para gestionar las rutas de la aplicación. 🗺️
+    * **Estilos:** `npm install tailwindcss @tailwindcss/vite` para la nueva versión de Tailwind. 🎨
+3.  **Configuración técnica:**
+    * Integración del plugin `@tailwindcss/vite` en el archivo `vite.config.js`.
+    * Importación de Tailwind en el archivo CSS principal: `@import "tailwindcss";`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗️ Arquitectura: Atomic Design
 
-## Expanding the ESLint configuration
+La organización del código sigue los principios de **Atomic Design**, lo que facilita el mantenimiento y la reutilización de componentes. Esta metodología se aplicó con especial detalle en:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Átomos:** Componentes básicos como el `InputField.jsx`, que gestiona sus propios estados de foco y error. ⚛️
+* **Organismos:** El formulario `Phorm.jsx`, que agrupa múltiples átomos para crear una unidad funcional completa. 🧬
+
+## 🧠 Desafíos Técnicos y Aprendizaje
+
+El mayor reto de este proyecto fue el desarrollo del **Formulario de Registro y su Lógica de Validación**. 🛠️ 
+
+Se implementó un sistema que:
+* Valida los datos del usuario en tiempo real mediante patrones definidos en `PhormRules.jsx`.
+* Gestiona estados complejos de UI para mostrar mensajes de error dinámicos.
+* Utiliza los nuevos estados de interacción de Tailwind v4 (`hover`, `focus`) para mejorar la experiencia del usuario (UX).
+
+## 📁 Estructura de Carpetas
+
+```text
+src/
+├── assets/             # Recursos estáticos
+├── components/
+│   ├── atoms/          # Componentes indivisibles (Inputs, Reglas)
+│   ├── organism/       # Componentes complejos (Formulario), navbar, footer
+├── pages/              # Vistas: Home, Login, Discover
+├── router/             # Configuración de React Router
+└── index.css           # Configuración de Tailwind y variables @theme
+
+***
+
