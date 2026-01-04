@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router";
-import NavBar from "../NavBar";
-import Footer from "../Footer";
+import NavBar from "../organism/NavBar.jsx";
+import Footer from "../organism/Footer.jsx";
+
 
 
 const Layout = () => {
