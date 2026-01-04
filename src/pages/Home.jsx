@@ -14,7 +14,7 @@ const Home =() => {
             <div className="max-w-sm">
                 <h1 className="text-5xl font-medium">Feel the music</h1>
                 <p className="py-8">Steam over 20 thousand songs with one click</p>
-                <Link to="/join" className="bg-button-bck py-3 px-5 rounded-md">Join Now</Link>
+                <Link to="/login" className="bg-button-bck py-3 px-5 rounded-md hover:bg-button-hover focus:bg-button-focus">Join Now</Link>
             </div>
         </section>
     )

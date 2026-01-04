@@ -42,7 +42,7 @@ const Phorm = () => {
             field.name, phormData[field.name]));
         const hasErrors = Object.values(errors).some(msg => msg !== "");
         if (!hasErrors) {
-            setFormMessage('');
+            setFormMessage('Thank you for joining!');
             console.log("Datos a validar:", phormData);
         } 
         if (hasErrors) {
@@ -65,7 +65,7 @@ const Phorm = () => {
             )) }
             {formMessage && (
                 <p className="text-acent-text"> {formMessage}</p>)}
-            <button type="submit" className="bg-button-bck py-3 rounded-md w-full mt-6 mb-6">Join Now</button>
+            <button type="submit" className="bg-button-bck py-3 rounded-md w-full mt-6 mb-6 hover:bg-button-hover focus:bg-button-focus">Join Now</button>
         </form>
     )
 };

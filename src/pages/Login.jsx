@@ -2,7 +2,7 @@ import Phorm from "../components/organism/Phorm";
 
 const Login = () => {
     return (
-      <section className="px-10 py-10 md:gap-50 flex flex-col md:flex-row md:items-center justify-center gap-10">
+      <section className="px-10 py-10 md:gap-50 flex flex-col md:flex-row md:items-center justify-center gap-10 mb-40">
         <div className="absolute top-[1%] left-[20%] w-50 h-50 md:w-120 md:h-120 bg-circle2 rounded-full z-[-1]"></div>
         <div className="absolute bottom-[-8%] md:bottom-[1%] left-[10%] md:left-[-1%] w-50 h-50 md:w-120 md:h-120 bg-circle1 rounded-full z-[-1]"></div>
 
